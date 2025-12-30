@@ -10,10 +10,18 @@ const App = () => {
     setItems((items) => [...items, item]);
   };
 
+  const handleDeleteItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="appWrapper">
       <Header />
-      <Main items={items} handleAddItems={handleAddItems} />
+      <Main
+        items={items}
+        handleAddItems={handleAddItems}
+        handleDeleteItem={handleDeleteItem}
+      />
       <Footer />
     </div>
   );

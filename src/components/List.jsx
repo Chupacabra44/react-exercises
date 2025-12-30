@@ -1,5 +1,5 @@
-const List = ({ item }) => {
-  const { product, quentity, packed } = item;
+const List = ({ item, onDelete }) => {
+  const { product, quentity, packed, id } = item;
 
   return (
     <li className="listWrapper">
@@ -8,7 +8,9 @@ const List = ({ item }) => {
       <div>
         <button className="doneBtn">Done</button>
 
-        <button className="deleteBtn">Delete</button>
+        <button onClick={() => onDelete(id)} className="deleteBtn">
+          Delete
+        </button>
       </div>
     </li>
   );
