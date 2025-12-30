@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ handleAddItems }) => {
   const [product, setProduct] = useState("");
   const [quentity, setQuentity] = useState(1);
 
@@ -15,6 +15,7 @@ const Form = () => {
         quentity: quentity,
       };
       console.log(newTodo);
+      handleAddItems(newTodo);
       setProduct("");
       setQuentity(1);
     }
