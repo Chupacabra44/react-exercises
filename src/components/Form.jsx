@@ -10,7 +10,7 @@ const Form = ({ handleAddItems }) => {
     if (product) {
       const newTodo = {
         id: Date.now(),
-        packeed: false,
+        packed: false,
         product: product,
         quentity: quentity,
       };
