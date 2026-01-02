@@ -1,4 +1,4 @@
-const List = ({ item, onDelete }) => {
+const List = ({ item, onDelete, handleDoneItem }) => {
   const { product, quentity, packed, id } = item;
 
   return (
@@ -6,7 +6,9 @@ const List = ({ item, onDelete }) => {
       <span>{quentity}</span>
       <p style={packed ? { textDecoration: "line-through" } : {}}>{product}</p>
       <div>
-        <button className="doneBtn">Done</button>
+        <button onClick={() => handleDoneItem(id)} className="doneBtn">
+          Done
+        </button>
 
         <button onClick={() => onDelete(id)} className="deleteBtn">
           Delete

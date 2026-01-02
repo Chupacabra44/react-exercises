@@ -1,7 +1,7 @@
 import List from "./List";
 import Form from "./Form";
 
-const Main = ({ items, handleAddItems, handleDeleteItem }) => {
+const Main = ({ items, handleAddItems, handleDeleteItem, handleDoneItem }) => {
   return (
     <div>
       <Form handleAddItems={handleAddItems} />
@@ -11,7 +11,12 @@ const Main = ({ items, handleAddItems, handleDeleteItem }) => {
       ) : (
         <ul className="mainWrapper">
           {items.map((item) => (
-            <List key={item.id} item={item} onDelete={handleDeleteItem} />
+            <List
+              key={item.id}
+              item={item}
+              onDelete={handleDeleteItem}
+              handleDoneItem={handleDoneItem}
+            />
           ))}
         </ul>
       )}

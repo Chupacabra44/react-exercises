@@ -14,6 +14,14 @@ const App = () => {
     setItems(items.filter((item) => item.id !== id));
   };
 
+  const handleDoneItem = (id) => {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
+
   return (
     <div className="appWrapper">
       <Header />
@@ -21,6 +29,7 @@ const App = () => {
         items={items}
         handleAddItems={handleAddItems}
         handleDeleteItem={handleDeleteItem}
+        handleDoneItem={handleDoneItem}
       />
       <Footer />
     </div>
