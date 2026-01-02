@@ -22,6 +22,8 @@ const App = () => {
     );
   };
 
+  // const counterItems = items.length;
+
   return (
     <div className="appWrapper">
       <Header />
@@ -31,7 +33,7 @@ const App = () => {
         handleDeleteItem={handleDeleteItem}
         handleDoneItem={handleDoneItem}
       />
-      <Footer />
+      <Footer items={items} />
     </div>
   );
 };
